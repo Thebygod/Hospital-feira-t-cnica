@@ -1,3 +1,3 @@
-<img src="https://imgs.search.brave.com/3msulr9d4uAe__POncZWDsp-AnalsuiBtUNKaoI-Hwk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy90aHVtYi9hL2FlL1NVU19hcGVuYXNfcHJlZW5jaGltZW50by5zdmcvMjUwcHgtU1VTX2FwZW5hc19wcmVlbmNoaW1lbnRvLnN2Zy5wbmc" alt="SUS ApênaS Preenchimento" class="main-img">
+<img src="sus.png" alt="SUS ApênaS Preenchimento" class="main-img">
 <h2>Bem-vindo ao SUS do Paraguai</h2>
 <p>Este é um hospital público e gratuito. Escolha uma das áreas acima para acessar as funcionalidades.</p> 

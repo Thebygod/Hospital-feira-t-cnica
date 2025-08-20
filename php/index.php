@@ -8,17 +8,29 @@
 
     // Rodar o código quando o formulário "POST" for enviado
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = trim($_POST['username']);  // Verifica usuário e senha removendo espaços extras
-    $password = trim($_POST['password']);
 
-        // Consulta no banco
+        // Verifica usuário e senha removendo espaços extras
+        $username = trim($_POST['username']);  
+        $password = trim($_POST['password']);
+
+        // Consulta no banco com segurança contra sql injection
         $sql = "SELECT id, username, password, tipo_usuario FROM usuarios WHERE username = ?";
+
+        // Prepara o SQL mas sem rodar ainda
         $stmt = $conn->prepare($sql);
+
+        // Substitui o ? pelo real valor, sendo uma string "s"
         $stmt->bind_param("s", $username);
+
+        // Agora executa a consulta ao banco
         $stmt->execute();
+
+        // Guarda e verifica o resultado
         $result = $stmt->get_result();
 
+        // Verifica se o usuário foi encontrado e/ou se há erro com o db
         if ($result->num_rows === 1) {
+
             $row = $result->fetch_assoc();
 
             // Verifica a senha
@@ -36,13 +48,13 @@
             } else {
                 // Senha incorreta
                 $_SESSION['erro_login'] = "Usuário ou senha incorretos.";
-                header("Location: login.html");
+                header("Location: ../html/login.html");
                 exit;
             }
         } else {
             // Usuário não encontrado
             $_SESSION['erro_login'] = "Usuário ou senha incorretos.";
-            header("Location: login.html");
+            header("Location: ");
             exit;
         }
     }
